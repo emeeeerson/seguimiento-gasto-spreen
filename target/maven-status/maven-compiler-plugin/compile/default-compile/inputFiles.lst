@@ -5,6 +5,9 @@ C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com
 C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\controller\gastos\GastosController.java
 C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\controller\user\UserController.java
 C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\controller\user\UserDto.java
+C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\exception\GastosException.java
+C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\exception\UserException.java
+C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\model\gatos\DateRange.java
 C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\model\gatos\Gastos.java
 C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\model\user\User.java
 C:\Users\Emers\Downloads\gastos-seguimiento\seguimiento-gastos\src\main\java\com\gastos\seguimiento\repository\GastosRepository.java

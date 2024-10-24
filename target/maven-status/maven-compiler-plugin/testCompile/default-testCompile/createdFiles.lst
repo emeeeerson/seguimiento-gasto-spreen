@@ -1,1 +1,3 @@
 com\gastos\seguimiento\SeguimientoGastosApplicationTests.class
+com\gastos\seguimiento\controller\UserTest.class
+com\gastos\seguimiento\controller\GastosTest.class
