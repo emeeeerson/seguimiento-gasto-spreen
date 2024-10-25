@@ -17,13 +17,13 @@ public class JWTUserDetailsService implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Optional<User> user = userRepository.findByEmail(email); // Busca por email en lugar de ID
+        Optional<User> user = userRepository.findByEmail(email);
 
         if (user.isPresent()) {
             return org.springframework.security.core.userdetails.User.builder()
                     .username(user.get().getEmail())
-                    .password(user.get().getPassword()) // Asegúrate de usar el campo correcto para la contraseña
-                    .roles("USER") // Puedes configurar roles según tus necesidades
+                    .password(user.get().getPassword())
+                    .roles("USER")
                     .build();
         } else {
             throw new UsernameNotFoundException("User not found with email: " + email);

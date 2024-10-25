@@ -5,7 +5,7 @@ import org.springframework.security.authentication.AbstractAuthenticationToken;
 public class TokenAuthentication extends AbstractAuthenticationToken {
 
     private final String token;
-    private final String email;  // Usamos email como principal
+    private final String email;
 
     public TokenAuthentication(String token, String email) {
         super(null);

@@ -36,7 +36,6 @@ public class SecurityConfiguration {
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // Gestión de sesión sin estado
                 );
 
-        // Añade el filtro JWT antes del UsernamePasswordAuthenticationFilter
         http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
@@ -53,7 +52,6 @@ public class SecurityConfiguration {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-        // Usa BCrypt para el cifrado de contraseñas
         return new BCryptPasswordEncoder();
     }
 }

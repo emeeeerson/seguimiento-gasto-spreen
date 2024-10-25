@@ -47,6 +47,7 @@ public class UserController {
         }
     }
 
+    //actualizar un usuario
     @PutMapping("/update/{id}")
     public ResponseEntity<User> updateUser(@PathVariable String id, @RequestBody User userDetails) {
         try {
@@ -62,7 +63,7 @@ public class UserController {
 
 
 
-    // Eliminar un usuario por ID
+    // Eliminar un usuario
     @DeleteMapping("/deleteUser/{id}")
     public ResponseEntity<HttpStatus> deleteUser(@PathVariable String id) {
         try {

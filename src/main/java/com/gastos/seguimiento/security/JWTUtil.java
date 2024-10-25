@@ -25,7 +25,6 @@ public class JWTUtil {
                 .compact();
     }
 
-    // Obtener el email (subject) del token JWT
     public String extractEmail(String token) {
         return extractClaim(token, Claims::getSubject); // Devuelve el email, que ahora es el subject
     }
@@ -36,7 +35,6 @@ public class JWTUtil {
         return (extractedEmail.equals(email) && !isTokenExpired(token));
     }
 
-    // Método para extraer cualquier claim del token JWT
     public <T> T extractClaim(String token, Function<Claims, T> claimsResolver) {
         final Claims claims = extractAllClaims(token);
         return claimsResolver.apply(claims);

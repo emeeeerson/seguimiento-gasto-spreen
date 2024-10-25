@@ -41,7 +41,7 @@ public class AuthController {
             Optional<User> userOptional = userRepository.findByEmail(loginDto.getEmail());
             if (userOptional.isEmpty()) {
                 System.out.println("Usuario no encontrado con el email: " + loginDto.getEmail());
-                return ResponseEntity.status(401).build(); // Si no se encuentra el usuario, retorna 401 Unauthorized
+                return ResponseEntity.status(401).build();
             } else {
                 System.out.println("Usuario encontrado: " + userOptional.get().getEmail());
             }
@@ -53,7 +53,7 @@ public class AuthController {
 
             // Si la autenticación es exitosa, generar el token
             UserDetails userDetails = (UserDetails) authentication.getPrincipal();
-            String jwtToken = jwtUtil.generateToken(userDetails.getUsername()); // Usar getUsername(), ya que representa el email
+            String jwtToken = jwtUtil.generateToken(userDetails.getUsername());
 
             // Devolver el token en un TokenDto
             return ResponseEntity.ok(new TokenDto(jwtToken, jwtUtil.extractExpiration(jwtToken)));  // Usamos el método extractExpiration

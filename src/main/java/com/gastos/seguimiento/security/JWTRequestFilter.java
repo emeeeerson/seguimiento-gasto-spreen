@@ -33,19 +33,16 @@ public class JWTRequestFilter extends OncePerRequestFilter {
         String email = null;
         String jwt = null;
 
-        // Verifica si el header tiene el token JWT
         if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
-            jwt = authorizationHeader.substring(7); // Remueve "Bearer " para extraer el token
-            email = jwtUtil.extractEmail(jwt); // Extrae el email del token
+            jwt = authorizationHeader.substring(7);
+            email = jwtUtil.extractEmail(jwt);
         }
 
-        // Si se extrajo el email y no hay autenticación en el contexto de seguridad
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 
-            UserDetails userDetails = this.jwtUserDetailsService.loadUserByUsername(email); // Ahora carga por email
+            UserDetails userDetails = this.jwtUserDetailsService.loadUserByUsername(email);
 
-            // Valida el token y si es correcto, configura la autenticación en el contexto de seguridad
-            if (jwtUtil.validateToken(jwt, userDetails.getUsername())) { // Aquí valida por email
+            if (jwtUtil.validateToken(jwt, userDetails.getUsername())) {
 
                 UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
                         userDetails, null, userDetails.getAuthorities());
@@ -53,7 +50,6 @@ public class JWTRequestFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(authenticationToken);
             }
         }
-        // Continúa con el filtro de la cadena
         chain.doFilter(request, response);
     }
 }
