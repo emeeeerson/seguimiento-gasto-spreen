@@ -13,24 +13,29 @@ public class GastosService {
     @Autowired
     private GastosRepository gastosRepository;
 
-    public List<Gastos> findAll(){
+    public List<Gastos> findAll() {
         return gastosRepository.findAll();
     }
 
-    public Gastos findById(String id){
+    public Gastos findById(String id) {
         return gastosRepository.findById(id).orElse(null);
     }
 
-    public Gastos save(Gastos gastos){
+    public Gastos save(Gastos gastos) {
         return gastosRepository.save(gastos);
     }
 
-    public void delete(String id){
+    public void delete(String id) {
         gastosRepository.deleteById(id);
     }
 
-    // Método para obtener los gastos entre dos fechas
+    //obtener los gastos entre dos fechas
     public List<Gastos> findByFechaBetween(LocalDate startDate, LocalDate endDate) {
         return gastosRepository.findByFechaBetween(startDate, endDate);
+    }
+
+    // para obtener los gastos de un usuario específico
+    public List<Gastos> findByUserEmail(String email) {
+        return gastosRepository.findByUserEmail(email);
     }
 }

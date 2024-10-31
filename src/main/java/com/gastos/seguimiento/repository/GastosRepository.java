@@ -8,8 +8,11 @@ import java.time.LocalDate;
 import java.util.List;
 
 @Repository
-public interface    GastosRepository extends MongoRepository<Gastos, String> {
+public interface GastosRepository extends MongoRepository<Gastos, String> {
 
-    // Método para encontrar gastos entre dos fechas
+    //encontrar gastos entre dos fechas
     List<Gastos> findByFechaBetween(LocalDate startDate, LocalDate endDate);
+
+    //gastos por email de usuario
+    List<Gastos> findByUserEmail(String email);
 }

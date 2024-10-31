@@ -30,7 +30,6 @@ public class UserTest {
     @InjectMocks
     private UserController userController;
 
-    // Test para obtener un usuario por ID
     @Test
     public void testGetUserById() {
         String userId = "123";
@@ -46,7 +45,6 @@ public class UserTest {
         assertEquals("Test User", response.getBody().getName());
     }
 
-    // Test para obtener todos los usuarios
     @Test
     public void testGetAllUsers() {
         User user1 = new User();
@@ -67,7 +65,6 @@ public class UserTest {
         assertEquals("User 1", result.get(0).getName());
     }
 
-    // Test para guardar un usuario
     @Test
     public void testSaveUser() {
         User mockUser = new User();

@@ -1,6 +1,7 @@
 package com.gastos.seguimiento.exception;
 
 public class GastosException {
+
     public static class GastoNotFoundException extends RuntimeException {
         public GastoNotFoundException(String message) {
             super(message);
